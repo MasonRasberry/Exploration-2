@@ -3,21 +3,16 @@ import java.util.HashMap;
 public class Hashing {
     public static int nearlyIdentical (int[] input) {
         HashMap<Integer,Integer> map = new HashMap<>();
-        
-        for (int i = 0; i < input.length; i++) {
-            map.put(input[i],0);
+
+        for (int value : input) {
+            map.put(value, map.getOrDefault(value, 0) + 1);
         }
 
-        for (int j = 0; j < input.length; j++) {
-            if (map.containsKey(j)) {
-                map.put(input[j],map.get(j)+1);
-            }
-        }
-        Integer longest = 0;
+        int longest = 0;
 
-        for (int h = 0; h < map.size(); h++) {
-            if (map.containsKey(h+1)) {
-                longest = Math.max(longest, map.get(h) + map.get(h+1));
+        for (int value : map.keySet()) {
+            if (map.containsKey(value + 1)) {
+                longest = Math.max(longest, map.get(value) + map.get(value + 1));
             }
         }
 

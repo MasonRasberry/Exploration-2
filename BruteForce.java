@@ -1,5 +1,3 @@
-import java.lang.Math;
-
 public class BruteForce {
     public static int nearlyIdentical (int[] input) {
         int longest = 0;
@@ -9,12 +7,12 @@ public class BruteForce {
             for (int j = 0; j < input.length; j++) {
                 if(input[j] == input[i]) {
                     count++;
-                } else if (input[j] + 1 == input[i]) {
+                } else if (input[j] + 1== input[i]) {
                     count++;
                     nextPresent = true;
                 }
             }
-            if (nextPresent) {
+            if (nextPresent){
                 longest = Math.max(longest,count);
             }
         }

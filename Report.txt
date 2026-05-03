@@ -1,0 +1,34 @@
+Group Members: Mason Rasberry, Benjamin Nyatome, and Seth Morris
+
+The brute force code and hashing code was primarily implemented by Mason Rasberry while the testing was primarily implemented by Benjamin Nyatome. This report was written by Mason Rasberry.
+
+Example of Brute Force test results:
+
+6
+The current input took 1121500 nanoseconds.
+0
+The current input took 66100 nanoseconds.
+2
+The current input took 53900 nanoseconds.
+3
+The current input took 66000 nanoseconds.
+0
+The current input took 69900 nanoseconds.
+
+Example of Hashing Test results for the same input:
+
+6
+The current input took 872800 nanoseconds.
+0
+The current input took 84900 nanoseconds.
+2
+The current input took 75600 nanoseconds.
+3
+The current input took 131300 nanoseconds.
+0
+The current input took 75000 nanoseconds.
+
+Generally, the hashing method will be faster than the brute force in most cases. Though due to the need to create an object, hashing is not always faster for small arrays.
+When input sizes increases, the lower time O(2n) complexity of the hashing method makes it much faster at scale than the O(n^2) time complexity of the brute force method.
+As for space complexity, the brute force method uses O(n) space because it only needs one array, the input array. The hashing method on the other hand uses both an input array and a hash map of equal size, giving it a space complexity of O(n^2).
+Despite that, the speed difference between the two methods makes the space tradeoff well worth the time gained in computation speed.
